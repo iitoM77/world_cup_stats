@@ -37,13 +37,6 @@ The `Group_C` table has the following columns:
 
 ---
 
-## Common Issues
-- **Empty Table**: Ensure `tournament_groups` has Group C populated before running.  
-- **Duplicate Matches**: The query expands each match into two rows, so aggregation is required to avoid duplicates.  
-- **Ranking**: The final ordering ensures FIFA‑style ranking (points → goal difference → goals scored).
-
----
-
 ## Usage Notes
 - Run this script after populating `group_stage_results` and `tournament_groups`.  
 - The output is a permanent `Group_C` table with standings.  
