@@ -1,3 +1,13 @@
+CREATE TABLE group_stage_results (
+    match_id VARCHAR PRIMARY KEY,
+    team_a VARCHAR NOT NULL,
+    team_b VARCHAR NOT NULL,
+    goals_a INT NOT NULL,
+    goals_b INT NOT NULL,
+    final_score VARCHAR NOT NULL,
+    match_result VARCHAR NOT NULL
+);
+
 INSERT INTO group_stage_results (match_id, team_a, team_b, goals_a, goals_b, final_score, match_result)
 SELECT DISTINCT ON (rp1.match_id)
     rp1.match_id,
