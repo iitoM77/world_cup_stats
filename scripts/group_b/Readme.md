@@ -1,6 +1,6 @@
 # Group_B Table
 
-## 📌 Overview
+## Overview
 The `Group_B` table stores the **log standings** for Group B in the World Cup dataset.  
 It is generated from the `group_stage_results` and `tournament_groups` tables, calculating each team’s performance in the group stage.  
 This table provides a snapshot of the group standings, including matches played, wins, draws, losses, goals, and points.
