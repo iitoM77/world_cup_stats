@@ -1,7 +1,7 @@
 # Group_B Table
 
 ## Overview
-The `Group_B` table stores the **log standings** for Group B in the World Cup dataset.  
+The `Group_B` table stores the standings for Group B in the World Cup dataset.  
 It is generated from the `group_stage_results` and `tournament_groups` tables, calculating each team’s performance in the group stage.  
 This table provides a snapshot of the group standings, including matches played, wins, draws, losses, goals, and points.
 
@@ -25,12 +25,19 @@ The `Group_B` table has the following columns:
 ---
 
 ## Script Logic
-1. **Extract Teams**: Pulls the four teams from `tournament_groups` where `Group = 'B'`.  
-2. **Expand Matches**: For each fixture in `group_stage_results`, generates two rows (one per team) with goals scored/conceded and win/draw/loss flags.  
-3. **Aggregate Stats**: Summarizes per team:
+1. Extracts the four teams from `tournament_groups` where `Group = 'B'`.  
+2. Expands each fixture in `group_stage_results` into two rows (one per team) with goals scored/conceded and win/draw/loss flags.  
+3. Aggregates per team to calculate:
    - Matches played  
    - Wins, draws, losses  
    - Goals scored and conceded  
    - Goal difference  
    - Points (3 × wins + 1 × draws)  
-4. **Insert into Group_B**: Results are inserted into the permanent `Group_B` table.
+4. Inserts the aggregated results into the permanent `Group_B` table.
+
+---
+
+## Usage Notes
+- Run this script after populating `group_stage_results` and `tournament_groups`.  
+- The output is a permanent `Group_B` table with standings.  
+- Extendable: You can replicate this script for other groups (C–L) by changing the group filter in the CTE.
