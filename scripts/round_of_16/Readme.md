@@ -1,4 +1,4 @@
-# round_of_16_results Table
+# round_of_16_results
 
 ## Overview
 The `round_of_16_results` table stores the results of knockout matches from the Round of 16 stage in the World Cup dataset.  
